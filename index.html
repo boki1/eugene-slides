@@ -20,237 +20,330 @@
 		  id="highlight-theme"
 		/>
 	</head>
-	<body>
+		<body>
 		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h1 class="presentation-title">Eugene</h1>
-					<h5>Система за съхранение, извличане и обработка на големи графовобазирани данни</h5>
-					<br />
-					<i><p>Дипломант: Кристиян Стоименов</p></i>
-					<i><p>Ръководител: Любомир Стоянов</p></i>
-					<img src="elsys.png" width="64px" />
-				</section>
+		<div class="slides">
+			<section>
+				<h1 class="presentation-title">Eugene</h1>
+				<h5>Система за съхранение, извличане и обработка на големи графовобазирани данни</h5>
+				<br/>
+				<i><p>Дипломант: Стоян Тинчев</p></i>
+				<i><p>Ръководител: Любомир Стоянов</p></i>
+			</section>
 
-				<section>
-					<section>
-						<h3>Функционални изисквания</h3>
-						<img src="https://cdn-icons-png.flaticon.com/512/7560/7560093.png" width="256px" />
-					</section>
-					<section>
-						<ul>
-							<li>Изграждане на система за съхранение на данните</li>
-							<li>Създаване на възможност за конкурентен достъп</li>
-							<li>Съхраняване на записи с променлива дължина</li>
-							<li>Групови операции за някои от заявките</li>
-							<li>Възможност за конфигуриране на някои от заявките</li>
-							<li>Имплементация на примерна база данни, използвайки системата</li>
-						</ul>
-					</section>
-				</section>
-
-				<section>
-					<h3>Преглед на съществуващи системи за управление на бази данни</h3>
-					<!-- <ul> -->
-					<!-- <li>Kaкво е СУБД?</li> -->
-					<!-- </ul> -->
-					<img src="https://cdn-icons.flaticon.com/png/512/3630/premium/3630471.png?token=exp=1653061469~hmac=4e7a7e5dad70cec5a55c82449c2e3338" width="256px" />
-				</section>
-
-				<section>
-					<h3>Проектиране на система за управление от бази данни</h3>
-					<!-- <ul> -->
-					<!-- <li>Подбор на технологии</li> -->
-					<!-- <li>Архитектура</li> -->
-					<!-- </ul> -->
-				</section>
-
-				<section>
-					<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdevtalk.com%2Fassets%2Fportals%2Fc-plus-plus-25e6dfa61e88b1047180a789f2292d0303429517f2831c2f9007273489ca5084.png&f=1&nofb=1" width="256px" />
-				</section>
-
-				<section>
-					<h3>Архитектура</h3>
-					<img src="https://cdn-icons-png.flaticon.com/512/993/993723.png" width="256px" />
-				</section>
-
-				<section>
-					<h3>Архитектура</h3>
-					<img src="https://i.ibb.co/YN7zvmq/arch-overall.png" alt="arch-overall" border="0">
-				</section>
-
-				<section>
-					<h3>Разработка на система за управление на бази данни</h3>
+			<section>
+				<h3>Изисквания</h3>
+				<ul>
+					<li>Алгоритъм за компресиране/декомпресиране на данните</li>
 					<ul>
-						<li>Pager модул</li>
-						<li>B-дърво модул</li>
-						<li>Коректност на реализацията</li>
+						<li>Имплементация на фрагментно декомпресиране</li>
+					</ul>
+					<li>Изграждане на метод за комуникация между изчислителните стълбове</li>
+					<li>Метод за наредена обработка на изчисленията</li>
+					<ul>
+						<li>Клиент/Сървър модел</li>
+					</ul>
+					<li>Метод за изпълнение на заявки</li>
+					<li>Имплементация на конкурентност и синхронизация между
+						изчислителните стълбове
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Характеристики на една СУБД</h3>
+				<ul>
+					<li>Положителни страни</li>
+					<li>Отрицателни страни</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Проектиране на система за управление от бази данни</h3>
+				<ul>
+					<li>Изисквания</li>
+					<li>Подбор на технологии</li>
+					<li>Архитектура</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Разработка на система за управление на бази данни</h3>
+				<ul>
+					<li>Заявки</li>
+					<li>Компресия</li>
+					<li>Декомпресия</li>
+					<ul>
+						<li>Частична декомпресия</li>
+					</ul>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h3>Компресионен модул</h3>
+					<img src="https://i.ibb.co/Npyk0Xg/image.png" alt="arch-pager">
+					<ul>
+						<li>Бързодействие 1GB файл за около 105 секунди</li>
 					</ul>
 				</section>
-
 				<section>
-					<h3>Pager модул</h3>
-					<img src="https://i.ibb.co/YcBSykR/arch-pager.png" alt="arch-pager" border="0">
+					<img src="https://i.ibb.co/0cf8JDS/image.png" alt="arch-pager">
 				</section>
-
 				<section>
-					<h3>B-дърво</h3>
-					<img src="https://i.ibb.co/tYN1ZzP/btree.png" alt="btree" border="0">
+					<img src="https://i.ibb.co/7y5qfvc/image.png" alt="arch-pager" width="40%" height="80%">
+				</section>
+				<section>
+					<img src="https://i.ibb.co/vqVg5Wn/image.png" alt="arch-pager" width="40%" height="80%">
+				</section>
+				<section>
+					<img src="https://i.ibb.co/R0Ps6rN/image.png" alt="arch-pager" width="40%" height="80%">
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h3>Декомпресионен модул</h3>
+					<img src="https://i.ibb.co/D46Pbc8/image.png" alt="btree">
 					<ul>
-						<li>Какво е B-дърво?</li>
-						<li>Защо?</li>
+						<li>Частично декомпресиране</li>
+						<li>Бързодействие 1GB файл за около 70 секунди</li>
 					</ul>
 				</section>
-
 				<section>
-					<h3>Модул B-дърво</h3>
-					<img src="https://i.ibb.co/55wDp92/arch-btree.png" alt="arch-btree" border="0">
+					<img src="https://i.ibb.co/wy95W1w/image.png" alt="arch-pager" width="40%" height="80%">
 				</section>
+			</section>
 
+			<section>
+				<h3>Клиент-сървър модул</h3>
+				<ul>
+					<li>Може да се използва самостоятелно, като не е необходимо структурата за съхранение да е B-дърво</li>
+					<li>Релизацията е изцяло абстрактна и могат да се съхраняват всякакви типове, дори такива, които
+						са дефиниране от потребителя
+					</li>
+				</ul>
+			</section>
+
+			<section>
 				<section>
 					<h3>Коректност на реализацията</h3>
-					<img src="https://i.ibb.co/HrCWdcx/gh-ci.png" alt="gh-ci" border="0">
+					<img src="https://i.ibb.co/MDy9H4c/image.png" alt="gh-ci" width="90%" height="40%">
+					<img src="https://i.ibb.co/7j5L2MM/image.png" alt="gh-ci" width="90%" height="40%">
 				</section>
-
 				<section>
-					<section>
-						<h3>Демонстрация</h3>
-						<img src="https://cdn-icons-png.flaticon.com/512/550/550486.png" width="250px"/>
-					</section>
-				</section>
+					<pre><code data-trim data-noescape>
+	#include <core/storage/compression/tests/Shared.h>
 
-				<section>
-					<h3>Резултати</h3>
-				</section>
+	/// \brief In this test - in the file is written 1KB
+	TEST_CASE("Compressor specific_file_size_test", "[specific_file_size_test]") {
+		const int file_size = 1*1024; //!< 1KB
+		const std::string &file_name = "test.txt";
+		const std::string &compressed_file_name = "compressed";
 
-				<section>
-					<h3>Бъдеща реализация</h3>
-					<!-- <ul> -->
-					<!-- <li>Write ahead logging</li> -->
-					<!-- <li>Copy-on-write (COW)</li> -->
-					<!-- <li>Допълнителни гаранции</li> -->
-					<!-- </ul> -->
-				</section>
+		const std::string text_in_file = generate_random_string_sequence(file_size);
 
-				<section>
-					<h3>Благодаря за вниманието!</h3>
-				</section>
+		std::ofstream ofs(file_name);
+		for (int j = 0; j < file_size; ++j)
+			ofs << text_in_file;
+		ofs.close();
 
-				<section>
-					<section>
-						<h3>Обработка на грешки</h3>
-						<ul>
-							<li>Отговорност на конкретната имплементация на СУБД</li>
-							<li>Няма възмоност за възстановяване</li>
-						</ul>
-					</section>
+		REQUIRE(exists(file_name));
 
-					<section>
-						<pre><code data-trim data-noescape>
-// In example DB
-try {
-	flag = std::holds_alternative<T::InsertedEntry>(db.db_tree->insert(id, g_p));
-} catch ([[maybe_unused]] BadAlloc &e) {
-	fmt::print("Err... dying\n");
-}
+		compression::Compressor compress{
+			std::vector<std::string>(1, file_name),
+			compressed_file_name
+		};
+		compress();
+		REQUIRE(exists(compressed_file_name));
 
-						</code></pre>
-					</section>
-				</section>
-
-				<section>
-					<h3>Връзка с графоориентирани данни</h3>
-				</section>
-
-				<section>
-					<h3>Връзка с големи обеми от данни</h3>
-				</section>
-
-				<section>
-					<h3>Скалируемност</h3>
-				</section>
-
-				<section>
-					<section>
-						<h3>mutable type specifier</h3>
-						<p><i>Позволява променянето на стойността на обекта дори, когато той е дефиниран като const</i></p>
-							<pre><code data-trim data-noescape>
-								const std::mutex m;
-								m.lock();
+		check_initial_compressed_size(file_name, compressed_file_name);
+		REQUIRE(clean({{"file_name", file_name},
+					   {"compressed_file_name", compressed_file_name}}));
+	}
 							</code></pre>
-					</section>
-					<section>
-						<pre><code data-trim data-noescape>
-							void get_value() const {
-								std::scoped_lock<std::mutex> locker{m};
-								return value;
-							}
-						</code></pre>
-					</section>
 				</section>
-
 				<section>
-					<section>
-						<h3>C++20 coroutines</h3>
-						<p>Similar to python generators</p>
-						<pre><code data-trim data-noescape>
-def fib(n):
-	a, b = 0, 1
-	for _ in range(n):
-		yield a
-	a, b = b, a + b 	</code></pre>
-					</section>
-					<section>
-							<pre><code data-trim data-noescape>
-	cppcoro::generator<std::pair<unsigned, bool>> chunkbit_iter(const Page &p) {
-		auto chunk_num = 0;
-		for (auto i = PAGE_TYPE_METADATA;
-			 i < PAGE_TYPE_METADATA + CHUNK_MAP_SIZE;
-			 ++i, ++chunk_num) {
-			const auto val = p.at(i);
-			for (auto bit_num = 0; bit_num < CHAR_BIT; ++bit_num)
-				co_yield std::make_pair(
-							chunk_num * CHAR_BIT + bit_num,
-							val & (1 << bit_num));
+					<pre><code data-trim data-noescape>
+	#include <core/storage/compression/benchmarks/Shared.h>
+
+	/// @brief Compression benchmark
+	///
+	/// \param st - google benchmark state object that contains the
+	/// benchmark parameters
+	static void BM_Compression(benchmark::State &st) {
+		for (auto _ : st) {
+			st.PauseTiming();
+			std::ofstream ofs(file_name.begin());
+
+			ofs << generate_random_string_sequence(st.range(0));
+
+			ofs.close();
+			st.ResumeTiming();
+
+			compression::Compressor{
+					std::vector<std::string>(1, file_name.begin()),
+					compressed_file_name}();
+
+			st.PauseTiming();
+			clean({file_name.begin(), compressed_file_name.begin()});
+			st.ResumeTiming();
 		}
-	} 					</code></pre>
-					</section>
+	}
+
+	//	1*1024*1024*1024 for 1GB ".txt" file -> ~105 seconds
+	//  1*1024*1024 for 1MB ".txt" file -> ~110ms
+	//  64 for 1KB ".txt" file
+	BENCHMARK(BM_Compression)
+			->Unit(benchmark::kMillisecond)
+			->Iterations(10)
+			->Arg(1*1024*1024);
+
+	BENCHMARK_MAIN();
+							</code></pre>
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<h3>Демонстрация</h3>
+					<img src="https://cdn-icons-png.flaticon.com/512/550/550486.png" width="250px"/>
+				</section>
+			</section>
+
+			<section>
+				<h3>Постижения на дипломната работа</h3>
+				<ul>
+					<li>Направено подробно проучване за реализация на поставените задачи.</li>
+					<li>Изградена система за съхранение, извличане и обработка на големи графовобазирани данни.</li>
+					<li>Подсистемата, която се грижи за компресирането/декомпресирането на информацията,
+						специалното частично декомпресиране и реализацията на клиент-сървър модел,
+						където да могат да се изпълняват заявки.
+					</li>
+					<!--                <li>Реализирана е примерна база данни, използвайки СУБД.</li>-->
+				</ul>
+			</section>
+
+			<section>
+				<h3>Бъдеща реализация</h3>
+				<ul>
+					<li>Ускорена компресия (използване на нишки)</li>
+					<li>Оптимизирана компресия (използване на mmap)</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Благодаря за вниманието!</h3>
+			</section>
+
+			<section>
+				<section>
+					<h3>Обработка на грешки</h3>
+					<ul>
+						<li>Използван е Logger за проследяване на проблемите</li>
+						<li>Клиент сървър модела има status response codes за специфични грешки</li>
+						<li>Пример</li>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Поведение на Pager при липса на пространство</h3>
-				</section>
+							<pre><code data-trim data-noescape>
+	template<typename Key, typename Value>
+	void Handler<Key, Value>::handle_request(std::string_view endpoint,
+											 const http_request &request, FuncHandleRequest &action) {
+		auto path = request.relative_uri().path();
+		CHECK_ENDPOINT(path, endpoint) {
+			auto answer = json::value::object();
+			request
+					.extract_json()
+					.then([&answer, &action, &request](const pplx::task<json::value> &task) {
+						try {
+							auto const &jvalue = task.get();
 
-				<section>
-					<p>Въпроси?</p>
-					<img src="https://cdn-icons-png.flaticon.com/512/942/942751.png" width="128px"/>
-				</section>
+							if (!jvalue.is_null()) {
+								action(jvalue, answer);
+							}
+						} catch (http_exception const &e) {
+							ucout << e.what() << std::endl;
+							Logger::the().log(spdlog::level::info,
+											  R"(Backend failure of "{0}" with exception "{1}")",
+											  request.relative_uri().path(), e.what());
+							request.reply(status_codes::InternalError,
+										  json::value::string(e.what()));
+							return;
+						}
+					})
+					.wait();
 
-				<section>
-					<h3>Благодаря за вниманието!</h3>
+			request.reply(status_codes::OK, answer);
+			return;
+		}
+		try {
+			m_credentials_decoder->decode(request.headers());
+			if (!m_credentials_decoder->is_valid(request.headers())) {
+				Logger::the().log(spdlog::level::err,
+								  R"(Backend failure of "{0}", user unauthorized)",
+								  request.relative_uri().path());
+				request.reply(status_codes::Unauthorized);
+				return;
+			}
+		} catch (std::exception &e) {
+			Logger::the().log(spdlog::level::err,
+							  R"(Backend failure of "{0}", user unauthorized)",
+							  request.relative_uri().path());
+			request.reply(status_codes::Unauthorized);
+			return;
+		}
+		request.reply(status_codes::NotFound);
+	}
+							</code></pre>
 				</section>
+			</section>
 
-				<section>
-				</section>
+			<section>
+				<h3>BASE64 кодиране</h3>
+			</section>
 
-			</div>
+			<section>
+				<h3>Криптография, сигурност клиент-сървър на транспортно ниво</h3>
+			</section>
+
+			<section>
+				<h3>Автентикация - пренос на потребителско име и парола</h3>
+			</section>
+
+			<section>
+				<h3>ASCII кодиране</h3>
+			</section>
+
+			<section>
+				<p>Въпроси?</p>
+				<img src="https://cdn-icons-png.flaticon.com/512/942/942751.png" width="128px"/>
+			</section>
+
+			<section>
+				<h3>Благодаря за вниманието!</h3>
+			</section>
+
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
-				slideNumber: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
 	</body>
 </html>
